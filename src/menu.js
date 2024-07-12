@@ -30,6 +30,7 @@ export class ContextMenu extends Menu {
   }
 
   open(x, y) {
+    console.log(x, y);
     // здесь передаю значения мышки по оси X и по оси Y и записываю все это в стили контекстного меню. А потом циклом прохожусь по главному стейту из массива и вызываю метод ещHTML так как у модуля есть этот метод который возвращает тег li
     this.el.innerHTML = ''
     this.el.style.cssText = `top: ${y}px; left: ${x}px;`
