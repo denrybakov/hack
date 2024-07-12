@@ -1,12 +1,12 @@
 import { Module } from '../core/module'
 
-export class ShapeModule extends Module {
+export class MessageModule extends Module {
   constructor(type, text) {
     super(type, text)
   }
 
 
   trigger() {
-    alert('Метод создания фигуры !')
+    alert('Метод создания сообщения !')
   }
 }
