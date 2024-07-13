@@ -1,5 +1,5 @@
-import {Module} from '../core/module';
-import {random} from '../utils';
+import { Module } from '../core/module';
+import { random } from '../utils';
 
 export class BackgroundModule extends Module {
   constructor(type, text) {
@@ -7,6 +7,7 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
+    // document.body.innerHTML = ''
     document.querySelector('body').style.backgroundColor = `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
   }
 
