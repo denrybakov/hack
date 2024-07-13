@@ -55,6 +55,7 @@ body {
 }
 
 .paint {
+	overflow: hidden;
 	position: relative;
 	padding-top: 10px;
 	padding-bottom: 50px;
