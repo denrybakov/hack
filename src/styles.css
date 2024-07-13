@@ -42,3 +42,15 @@ body {
 .menu .menu-item:hover {
 	background: #343434;
 }
+
+.figure-1 {
+  border-radius: 50%;
+}
+
+.figure-4 {
+  border-radius: 50% / 50%;
+}
+
+.figure-5 {
+  transform: skew(30deg);
+}
