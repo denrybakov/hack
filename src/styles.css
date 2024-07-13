@@ -276,7 +276,7 @@ body {
 	display: inline-block;
 
 	color: black;
-=======
+}
 .timer_modal-overlay {
 	position: fixed;
 	left: 40%;
@@ -291,11 +291,7 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	background: linear-gradient(
-		156deg,
-		rgba(110, 109, 111, 0.197),
-		rgba(255, 255, 255, 0.783)
-	);
+	background: linear-gradient(156deg, rgba(110, 109, 111, 0.197), rgba(255, 255, 255, 0.783));
 	z-index: 1000;
 	transition: 0.9s ease;
 	opacity: 1;
@@ -386,15 +382,15 @@ body {
 	margin: 0 auto;
 	font-weight: bolder;
 	font-size: 5rem;
-
+}
 .figure-1 {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 .figure-4 {
-  border-radius: 50% / 50%;
+	border-radius: 50% / 50%;
 }
 
 .figure-5 {
-  transform: skew(30deg);
+	transform: skew(30deg);
 }
