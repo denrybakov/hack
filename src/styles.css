@@ -152,4 +152,15 @@ body {
 	margin: 0 auto;
 	font-weight: bolder;
 	font-size: 5rem;
+
+.figure-1 {
+  border-radius: 50%;
+}
+
+.figure-4 {
+  border-radius: 50% / 50%;
+}
+
+.figure-5 {
+  transform: skew(30deg);
 }
