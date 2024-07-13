@@ -10,6 +10,7 @@ export class PaintModule extends Module {
   }
 
   trigger() {
+    document.body.innerHTML = ''
     if (this.$container) {
       this.$container.remove()
     }
@@ -21,21 +22,18 @@ export class PaintModule extends Module {
     this.$canvas.addEventListener('mouseup', this.#stopDrawing)
     this.$canvas.addEventListener('mouseout', this.#stopDrawing)
     this.$btnClose.addEventListener('click', () => this.$container.remove())
-    this.$btnDownload.addEventListener('click', () => {
-      this.ctx.clearRect(0, 0, this.$canvas.width, this.$canvas.height)
-    })
-
+    this.$btnDownload.addEventListener('click', this.#downloadCanvas)
     this.$ulTools.addEventListener('click', this.#listenerTools)
   }
 
   #resizeCanvas() {
-    this.$canvas.width = this.$container.clientWidth - 200;
-    this.$canvas.height = this.$container.clientHeight - 50;
+    this.$canvas.width = 650
+    this.$canvas.height = 400
   }
 
   #startDrawing = (e) => {
     this.isDrawing = true
-    // this.ctx.strokeStyle = "red";
+    this.ctx.lineWidth = 2
     this.ctx.beginPath()
     this.ctx.moveTo(e.offsetX, e.offsetY)
   }
@@ -53,30 +51,47 @@ export class PaintModule extends Module {
   }
 
   #listenerTools = (e) => {
-
     this.$ulTools.childNodes.forEach(li => li.classList.remove('active'))
     this.ctx.strokeStyle = e.target.className;
     if (e.target.classList.contains('clear')) {
+      this.ctx.lineWidth = 4
       this.ctx.strokeStyle = 'white';
     }
+    if (e.target.classList.contains('fill')) {
+      if (confirm('Вы уверены что хотите очистить свое произведение искусства?')) {
+        this.ctx.clearRect(0, 0, this.$canvas.width, this.$canvas.height)
+        this.$ulTools.childNodes[0].classList.add('active')
+        this.ctx.strokeStyle = 'black'
+      } else {
+        this.$ulTools.childNodes[0].classList.add('active')
+        this.ctx.strokeStyle = 'black'
+      }
+    }
     e.target.classList.add('active')
+  }
 
-    console.log(e.target.className);
+  #downloadCanvas = () => {
+    this.$linkDownload = document.createElement('a')
+    this.$linkDownload.download = `${Date.now()}-MyPicture.png`
+    this.$linkDownload.href = this.$canvas.toDataURL('image/png')
+    this.$linkDownload.click()
   }
 
   #createDOMElements = () => {
     this.$container = addElemNode('div', 'paint', '')
+    this.$label = addElemNode('div', 'paint__label', ' Твори Созидай Улучшай Изменяй ')
     this.$canvas = addElemNode('canvas', 'paint__canvas', '')
     this.ctx = this.$canvas.getContext('2d')
 
-    this.$btnDownload = addElemNode('button', 'paint__download', 'Скачать')
-    this.$btnClose = addElemNode('button', 'paint__close', 'Закрыть')
+    this.$btnDownload = addElemNode('button', 'paint__download', 'Скачать искусство')
+    this.$btnClose = addElemNode('span', 'paint__close', '')
     this.$ulTools = addElemNode('ul', 'tools', '')
+
     this.colors.forEach(color => this.$ulTools.append(addElemNode('li', `${color}`, '')))
     this.tools.forEach(tool => this.$ulTools.append(addElemNode('li', `${tool}`, '')))
     this.$ulTools.childNodes[0].classList.add('active')
 
-    this.$container.append(this.$btnClose, this.$ulTools, this.$canvas, this.$btnDownload)
+    this.$container.append(this.$btnClose, this.$ulTools, this.$label, this.$canvas, this.$btnDownload)
     document.body.append(this.$container)
   }
 }
