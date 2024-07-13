@@ -7,6 +7,6 @@ export class SoundModule extends Module {
 
 
   trigger() {
-    alert('Метод создания случайного звука !')
+    console.log('hi') 
   }
 }
