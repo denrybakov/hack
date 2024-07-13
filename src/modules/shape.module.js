@@ -19,8 +19,8 @@ export class ShapeModule extends Module {
   }
 
   #moveShape() {
-    this.$shape.style.top = `${(random(parseInt(this.$shape.style.height), window.innerHeight - parseInt(this.$shape.style.height)))}px`;
-    this.$shape.style.left = `${(random(parseInt(this.$shape.style.width), window.innerWidth - parseInt(this.$shape.style.width)))}px`;
+    this.$shape.style.top = `${parseInt(this.$shape.style.top) + 1}px`
+    this.$shape.style.left = `${parseInt(this.$shape.style.left) + 1}px`;
   }
 
   #deleteShape() {
@@ -29,8 +29,8 @@ export class ShapeModule extends Module {
 
   trigger() {
     this.#createShape()
-    setTimeout(() => this.#deleteShape(), 3000);
-    setInterval(() => this.#moveShape(), 1000);
+    setTimeout(() => this.#deleteShape(), 10000);
+    setInterval(() => this.#moveShape(), 100);
   }
 }
 
