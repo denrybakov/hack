@@ -35,13 +35,123 @@ body {
 	font-size: 1rem;
 	color: #eee;
 	cursor: pointer;
-	transition: background-color .2s ease-in;
+	transition: background-color 0.2s ease-in;
 	border-radius: inherit;
 }
 
 .menu .menu-item:hover {
 	background: #343434;
 }
+
+.timer_modal-overlay {
+	position: fixed;
+	left: 40%;
+	right: 0;
+	top: 40%;
+	bottom: 0;
+	width: 300px;
+	height: 150px;
+	border-radius: 15px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: linear-gradient(
+		156deg,
+		rgba(110, 109, 111, 0.197),
+		rgba(255, 255, 255, 0.783)
+	);
+	z-index: 1000;
+	transition: 0.9s ease;
+	opacity: 1;
+	box-shadow: 3px 6px 5px rgba(110, 109, 111, 0.197);
+
+	animation: 2s show ease;
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.modal-overlay_hidden {
+	animation: fade 1s ease;
+	opacity: 0;
+}
+
+.modal-form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.form-label {
+	font-family: 'roboto', sans-serif;
+	font-weight: bold;
+}
+
+.modal-input {
+	border-color: #bdbdbd;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.25s ease-in-out;
+	font-size: larger;
+}
+
+.modal-input:focus {
+	color: #7d7f80;
+	background-color: #fff;
+	border-color: #bdbdbd;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.modal-button {
+	font-family: 'roboto', sans-serif;
+	color: #080808;
+	background-color: #eea6a6;
+	border-color: #bdbdbd;
+	border-radius: 15px;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(116, 116, 116, 0.25);
+}
+
+.timer {
+	animation: show 1.5s ease;
+	width: 10rem;
+	height: 10rem;
+	position: fixed;
+	top: 10%;
+	right: 5%;
+	/* border: 2px solid black; */
+	background: radial-gradient(rgba(123, 123, 123, 0.5), rgba(156, 11, 78, 0.5));
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+}
+
+.timer_hidden {
+	opacity: 0;
+}
+
+.timer-span {
+	font-family: 'roboto', sans-serif;
+	margin: 0 auto;
+	font-weight: bolder;
+	font-size: 5rem;
 
 .figure-1 {
   border-radius: 50%;
