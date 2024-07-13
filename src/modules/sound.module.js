@@ -21,8 +21,8 @@ export class SoundModule extends Module {
         // audio.src = '../sound/Sound_04572.mp3'; // Указываем путь к звуку "клика"
         // audio.autoplay = true; // Автоматически запускаем
       
-      const audio = new Audio('../../../../sound/Sound_04572.mp3')
-      audio.play() 
+      // const audio = new Audio('../../../../sound/Sound_04572.mp3')
+      // audio.play() 
 
         // const player = document.createElement('audio')
         // player.src = '../sound/Sound_04572.mp3'
@@ -30,17 +30,17 @@ export class SoundModule extends Module {
         // player.autoplay = true
         // player.play()
 
-      //   const sounds = [
-      //     './assets/sound1.mp3',
-      //     './assets/sound2.mp3',
-      //     './assets/sound3.mp3'
-      // ];
+        const sounds = [
+          './assets/sound1.mp3',
+          './assets/sound2.mp3',
+          './assets/sound3.mp3'
+      ];
   
-      // const randomIndex = Math.floor(Math.random() * sounds.length);
-      // const randomSound = sounds[randomIndex];
+      const randomIndex = Math.floor(Math.random() * sounds.length);
+      const randomSound = sounds[randomIndex];
   
-      // const audio = new Audio(randomSound);
-      // audio.play();
+      const audio = new Audio(randomSound);
+      audio.play();
    
 
       //   // player.play()
@@ -52,25 +52,9 @@ export class SoundModule extends Module {
     // // this.myAudio2.autoplay = true
     //   console.log(this.myAudio1)
     //   this.myAudio1.play()
-        
-    
-
+  
       
-// создаем аудио контекст
-// var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
-// // создаем OscillatorNode - генератор
-// var oscillator = audioCtx.createOscillator();
-// oscillator.type = 'square';
-// // задаем частоту в герцах
-// oscillator.frequency.setValueAtTime(440, audioCtx.currentTime);
-// oscillator.connect(audioCtx.destination);
-// // запускаем пищалку
-// oscillator.start();
-// // говорим "горшочек не вари" через 300 мс
-// setTimeout(e => oscillator.stop(), 300);
 
-
-    
     // this.soundArray. push(this.myAudio1, this.myAudio2) 
     // console.log(this.soundArray)
     // // console.log(this.soundArray[0].play())
