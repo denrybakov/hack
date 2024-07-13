@@ -14,6 +14,7 @@ contextMenu.add(new ClicksModule('click', 'Считать клики (за 5 с�
 contextMenu.add(new ShapeModule('shape', 'Создать фигуру'))
 contextMenu.add(new BackgroundModule('fon', 'Поменять цвет'))
 contextMenu.add(new MessageModule('message', 'Вызвать сообщение'))
+contextMenu.add(new TimerModule('timer', 'Таймер'))
 contextMenu.add(new SoundModule('sound', 'Случайный звук'))
 contextMenu.add(new PaintModule('paint', 'Режим Пикассо'))
 
