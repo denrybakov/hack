@@ -143,6 +143,10 @@ body {
 	align-items: center;
 }
 
+.timer_hidden {
+	opacity: 0;
+}
+
 .timer-span {
 	font-family: 'roboto', sans-serif;
 	margin: 0 auto;
