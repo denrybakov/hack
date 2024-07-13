@@ -6,6 +6,20 @@ export class ClicksModule extends Module {
   }
 
   trigger() {
-    alert('Метод создания клика')
+    
+    let counter = 0;
+    // this.clickCount = document.createElement('h1');
+    // this.clickCount.textContent = new Date();
+    // document.body.prepend(this.clickCount);
+    document.addEventListener('click', () => {
+      counter++;
+      // this.clickCount.textContent = counter - 1;
+    })
+    setTimeout(() => {
+      // this.clickCount.textContent = `Количество кликов - ${counter - 1}`;
+      alert(`Количество кликов - ${counter - 1}`);
+
+    }, 5000)
+    
   }
 }
