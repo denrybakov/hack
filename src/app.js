@@ -15,3 +15,10 @@ contextMenu.add(new BackgroundModule('fon', 'Поменять цвет'))
 contextMenu.add(new MessageModule('message', 'Вызвать сообщение'))
 contextMenu.add(new SoundModule('sound', 'Случайный звук'))
 contextMenu.add(new PaintModule('paint', 'Хочу рисовать!'))
+
+
+
+
+// TEST
+console.log('Testing new branch bogdanovTest'); // TEST
+// TEST
