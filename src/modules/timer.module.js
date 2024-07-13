@@ -45,10 +45,17 @@ export class TimerModule extends Module {
 				const timerBlock = document.createElement('div');
 				timerBlock.className = 'timer';
 				this.el.append(timerBlock);
-				const timerValue = document.createElement('span');
+				let timerValue = document.createElement('span');
 				timerValue.className = 'timer-span';
 				timerBlock.append(timerValue);
 				timerValue.textContent = this.input.value;
+				const timer = setInterval(() => {
+					timerValue.textContent = this.input.value--;
+					if (this.input.value < -1) {
+						clearInterval(timer);
+						timerBlock.remove();
+					}
+				}, 1000);
 			}
 		});
 	}
