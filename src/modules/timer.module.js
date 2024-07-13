@@ -34,5 +34,22 @@ export class TimerModule extends Module {
 		this.button.textContent = 'Запустить таймер!';
 		this.button.type = 'submit';
 		this.form.append(this.button);
+
+		this.form.addEventListener('submit', event => {
+			event.preventDefault();
+			const { target } = event;
+			const submitButton = target;
+
+			if (submitButton) {
+				this.modalWindow.classList.add('modal-overlay_hidden');
+				const timerBlock = document.createElement('div');
+				timerBlock.className = 'timer';
+				this.el.append(timerBlock);
+				const timerValue = document.createElement('span');
+				timerValue.className = 'timer-span';
+				timerBlock.append(timerValue);
+				timerValue.textContent = this.input.value;
+			}
+		});
 	}
 }
