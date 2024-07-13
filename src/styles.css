@@ -44,14 +44,140 @@ body {
 }
 
 .paint {
-	/* position: relative;
-	width: 800px;
-	height: 600px;
-	border: 1px solid black; */
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.296);
+	/* filter: blur(5px); */
 }
 
 .paint__canvas {
-	/* position: absolute;
-	top: 0;
-	left: 0; */
+	background-color: white;
+	/* width: 50%;
+	height: 50%; */
+	margin-left: 6%;
+}
+
+.paint__canvas:hover {
+	cursor: crosshair;
+}
+
+.tools {
+	position: absolute;
+	top: 100px;
+	left: 10px;
+	display: flex;
+	list-style: none;
+	flex-direction: column;
+	gap: 3px;
+	width: 50px;
+	align-items: center;
+	background-color: white;
+	border-radius: 25px;
+	padding: 11px 0;
+	margin: 10px 0;
+}
+.black,
+.yellow,
+.blue,
+.red,
+.green,
+.none,
+.clear,
+.fill {
+	width: 33px;
+	height: 33px;
+	border: 2px solid #be05e3;
+	border-radius: 20px;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.black {
+	background-color: black;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.red {
+	background-color: tomato;
+}
+.green {
+	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.none {
+	border: none;
+	background: url('./assets/none.png') no-repeat center / 20px 20px;
+	height: 33px;
+	cursor: default;
+}
+
+.clear {
+	border: none;
+	background: url('./assets/clear.png') no-repeat center / 20px 20px;
+}
+
+.fill {
+	border: none;
+	background: url('./assets/clearAll.png') no-repeat center / 20px 20px;
+}
+
+.black.active {
+	transform: translateX(10px);
+	border: 2px solid black;
+}
+
+.yellow.active {
+	transform: translateX(10px);
+	border: 2px solid yellow;
+}
+
+.red.active {
+	transform: translateX(10px);
+	border: 2px solid red;
+}
+
+.green.active {
+	transform: translateX(10px);
+	border: 2px solid green;
+}
+
+.blue.active {
+	transform: translateX(10px);
+	border: 2px solid blue;
+}
+
+.clear.active {
+	transform: translateX(10px);
+}
+
+.black:hover {
+	transform: translateX(3px);
+	border: 2px solid black;
+}
+.yellow:hover {
+	transform: translateX(3px);
+	border: 2px solid yellow;
+}
+.red:hover {
+	transform: translateX(3px);
+	border: 2px solid tomato;
+}
+.green:hover {
+	transform: translateX(3px);
+	border: 2px solid green;
+}
+.blue:hover {
+	transform: translateX(3px);
+	border: 2px solid blue;
+}
+
+.clear:hover,
+.fill:hover {
+	transform: translateX(10px);
 }
