@@ -9,7 +9,7 @@ import './styles.css'
 
 const contextMenu = new ContextMenu()
 
-contextMenu.add(new ClicksModule('click', 'Считать клики (за 3 секунды)'))
+contextMenu.add(new ClicksModule('click', 'Считать клики (за 5 секунд)'))
 contextMenu.add(new ShapeModule('shape', 'Создать фигуру'))
 contextMenu.add(new BackgroundModule('fon', 'Поменять цвет'))
 contextMenu.add(new MessageModule('message', 'Вызвать сообщение'))
