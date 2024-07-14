@@ -6,7 +6,7 @@ export class ClicksModule extends Module {
     super(type, text)
   }
 
-  createClickCountBlock() {
+  #createClickCountBlock() {
 		this.clickBlock = document.createElement('div');
     this.clickBlock.className = 'click';
 		document.body.append(this.clickBlock);
@@ -16,7 +16,7 @@ export class ClicksModule extends Module {
     
 	}
 
-  createModalTotal() {
+  #createModalTotal() {
     this.modalTotal = document.createElement('div');
     this.modalTotal.className = 'total';
     
@@ -26,7 +26,7 @@ export class ClicksModule extends Module {
   trigger() {
     document.body.innerHTML = '';
     let counter = 0;
-    this.createClickCountBlock();
+    this.#createClickCountBlock();
     document.addEventListener('click', () => {
       counter++;
       this.clickCount.textContent = counter - 1;
@@ -43,7 +43,7 @@ export class ClicksModule extends Module {
 
     setTimeout(() => {
       document.body.innerHTML = '';
-      this.createModalTotal();
+      this.#createModalTotal();
       this.modalTotal.textContent = `Количество кликов: ${counter - 1}`;
      
       
