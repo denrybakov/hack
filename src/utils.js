@@ -1,3 +1,5 @@
+export const TOKEN_TINY = '0ZdVBZOeoqMFK66lFBwKPMDN9O9gXdS9SMWgRvw284MINa5lulxK0MgtGGAk'
+
 export function random(min, max) {
   return Math.round(min - 0.5 + Math.random() * (max - min + 1))
 }
@@ -14,3 +16,12 @@ export const addFileInput = (classElem = '', id = '', textContent = 'Выбри�
     <label for="${id}">${textContent}</label>
   </div
 `
+
+export const postDataUrl = (url, method, body, token = '') =>
+  fetch(`${url}api_token=${token}`, {
+    headers: { 'Content-Type': 'application/json' },
+    method, body
+  })
+    .then(response => response.json())
+    .then(data => data)
+    .catch(err => console.error('Error:', err))

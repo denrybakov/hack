@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 @keyframes picasso {
 	0% {
@@ -324,11 +325,7 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	background: linear-gradient(
-		156deg,
-		rgba(110, 109, 111, 0.197),
-		rgba(255, 255, 255, 0.783)
-	);
+	background: linear-gradient(156deg, rgba(110, 109, 111, 0.197), rgba(255, 255, 255, 0.783));
 	z-index: 3000;
 	transition: 0.9s ease;
 	opacity: 1;
@@ -447,6 +444,78 @@ body {
 	transform: skew(30deg);
 }
 
+.shortLink {
+	font-family: "Play", sans-serif;
+	font-weight: 700;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 30px;
+	background-color: rgb(219, 57, 213);
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	z-index: 500;
+}
+
+.shortLink__title {
+	font-family: "Play", sans-serif;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 3px;
+	font-size: 25px;
+}
+
+.shortLink > input {
+	position: relative;
+	margin-top: 20px;
+	font-family: "Play", sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	padding: 20px 30px;
+	padding-left: 60px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: #f1a3f8;
+	margin-bottom: 15px;
+	border: none;
+	transition: all .2s ease-in-out;
+}
+
+.shortLink > input:focus {
+	outline: solid;
+}
+
+.shortLink__title:after {
+	content: '';
+	position: absolute;
+	background: url('../assets/link.png') no-repeat center / cover;
+	width: 15px;
+	height: 15px;
+	top: 102px;
+	left: 60px;
+	z-index: 1000;
+}
+
+.shortLink__text {
+	text-align: center;
+}
+
+.shortLink__text > a {
+	color: white;
+	font-weight: 500;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+.shortLink__text > a:hover {
+	text-decoration: underline;
+=======
 .click {
 	font-size: 70px;
 	position: fixed;
