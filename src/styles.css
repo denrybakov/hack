@@ -270,7 +270,7 @@ body {
 
 .paint__label {
 	font-size: 80px;
-	font-family: "Rubik Mono One", monospace;
+	font-family: 'Rubik Mono One', monospace;
 	font-weight: 400;
 	font-style: normal;
 	animation: picasso 12s infinite linear;
@@ -324,8 +324,12 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	background: linear-gradient(156deg, rgba(110, 109, 111, 0.197), rgba(255, 255, 255, 0.783));
-	z-index: 1000;
+	background: linear-gradient(
+		156deg,
+		rgba(110, 109, 111, 0.197),
+		rgba(255, 255, 255, 0.783)
+	);
+	z-index: 3000;
 	transition: 0.9s ease;
 	opacity: 1;
 	box-shadow: 3px 6px 5px rgba(110, 109, 111, 0.197);
@@ -392,6 +396,10 @@ body {
 	box-shadow: 0 0 0 0.2rem rgba(116, 116, 116, 0.25);
 }
 
+.modal-button:disabled {
+	background-color: #a6a6a64e;
+}
+
 .timer {
 	animation: show 1.5s ease;
 	width: 10rem;
@@ -399,7 +407,6 @@ body {
 	position: fixed;
 	top: 10%;
 	right: 5%;
-	/* border: 2px solid black; */
 	background: radial-gradient(rgba(123, 123, 123, 0.5), rgba(156, 11, 78, 0.5));
 	border-radius: 50%;
 	display: flex;
@@ -414,7 +421,18 @@ body {
 	font-family: 'roboto', sans-serif;
 	margin: 0 auto;
 	font-weight: bolder;
-	font-size: 5rem;
+	font-size: 4rem;
+}
+
+.message {
+	position: absolute;
+	margin: 0 auto;
+	top: 40%;
+	left: 15%;
+	color: rgb(189, 0, 0);
+	font-size: 150px;
+	font-weight: bolder;
+	animation: show 2s ease;
 }
 .figure-1 {
 	border-radius: 50%;
