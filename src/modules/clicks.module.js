@@ -8,7 +8,7 @@ export class ClicksModule extends Module {
 
   createClickCountBlock() {
 		this.clickBlock = document.createElement('div');
-    this.clickBlock.className = 'click-block';
+    this.clickBlock.className = 'click';
 		document.body.append(this.clickBlock);
 		this.clickCount = document.createElement('h1');
 		this.clickBlock.append(this.clickCount);
@@ -16,31 +16,36 @@ export class ClicksModule extends Module {
     
 	}
 
-  // createTotalBlock() {
-  //   this.clickCountTotal = document.createElement('h1');
-  //   this.clickBlock.append(this.clickCountTotal);
-  // }
+  createModalTotal() {
+    this.modalTotal = document.createElement('div');
+    this.modalTotal.className = 'total';
+    
+    document.body.append(this.modalTotal);
+  }
 
   trigger() {
-    
+    document.body.innerHTML = '';
     let counter = 0;
     this.createClickCountBlock();
     document.addEventListener('click', () => {
       counter++;
       this.clickCount.textContent = counter - 1;
-      // this.clickCount.style.color = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)}}`;
+      this.clickCount.style.color = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+      
     })
 
     document.addEventListener('contextmenu', () => {
       counter++;
       this.clickCount.textContent = counter - 1;
-      // this.clickCount.style.color = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)}}`;
+      this.clickCount.style.color = `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+      
     })
 
     setTimeout(() => {
       document.body.innerHTML = '';
-      
-      alert(`Количество кликов - ${counter - 1}`); // сделать модалку
+      this.createModalTotal();
+      this.modalTotal.textContent = `Количество кликов: ${counter - 1}`;
+     
       
     }, 5000)
     
