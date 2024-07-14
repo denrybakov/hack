@@ -515,7 +515,7 @@ body {
 
 .shortLink__text > a:hover {
 	text-decoration: underline;
-=======
+}
 .click {
 	font-size: 70px;
 	position: fixed;
@@ -528,7 +528,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 }
 
 .total {
