@@ -1,5 +1,5 @@
 import { Module } from '../core/module'
-
+import { random } from '../utils';
 
 
 export class SoundModule extends Module {
@@ -9,15 +9,16 @@ export class SoundModule extends Module {
 
 
   trigger() {
-    const sounds = [
-      '../assets/Sound_04572.mp3',
-      '../assets/Sound_04563.wav',
-  ];
-
-  const randomIndex = Math.floor(Math.random() * sounds.length);
-  const randomSound = sounds[randomIndex];
-
-  const audio = new Audio(randomSound);
-    audio.play();
+    this.sounds = [
+      '../../assets/Sound_04572.mp3',
+      '../../assets/Sound_04563.wav',
+      '../../assets/Sound_19561.mp3',
+      '../../assets/Звук С выкриком полундра.mp3',
+      '../../assets/Звук Где пираты аплодируют и радуются.mp3',
+    ]
+    this.randomIndex = random(0, this.sounds.length - 1)
+    console.log(this.randomIndex)
+    this.sound = new Audio(this.sounds[this.randomIndex])
+    this.sound.play()
   }
 }
