@@ -434,14 +434,15 @@ body {
 	font-weight: bolder;
 	animation: show 2s ease;
 }
+
 .figure-1 {
 	border-radius: 50%;
 }
 
-.figure-4 {
+.figure-2 {
 	border-radius: 50% / 50%;
 }
 
-.figure-5 {
+.figure-3 {
 	transform: skew(30deg);
 }
