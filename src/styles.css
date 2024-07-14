@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 @keyframes picasso {
 	0% {
@@ -56,19 +57,22 @@ body {
 }
 
 .paint {
+	overflow: hidden;
 	position: relative;
 	padding-top: 10px;
 	padding-bottom: 50px;
 	background-color: rgb(240, 145, 3);
 	/* filter: blur(5px); */
 	height: 630px;
+	border-bottom: 7px solid black;
+	z-index: 100;
 }
 
 .paint__close {
 	position: absolute;
 	top: 20%;
 	transform: translateY(-13%);
-	left: 13px;
+	left: 15px;
 	padding: 20px;
 	background-color: white;
 	border-radius: 50%;
@@ -81,7 +85,7 @@ body {
 .paint__close:after {
 	position: absolute;
 	top: 19px;
-	left: 8px;
+	left: 7px;
 	content: '';
 	width: 25px;
 	height: 3px;
@@ -111,7 +115,7 @@ body {
 .paint__download {
 	position: absolute;
 	bottom: 0;
-	left: 50%;
+	left: 70%;
 	transform: translateX(-50%);
 	padding: 12px 30px;
 	border: 2px solid black;
@@ -119,7 +123,8 @@ body {
 	border-radius: 10px;
 	text-transform: uppercase;
 	cursor: pointer;
-	transition: all 0.5s ease-in-out;
+	transition: all .5s ease-in-out;
+	margin-bottom: 23px;
 }
 
 .paint__download:hover {
@@ -185,19 +190,19 @@ body {
 
 .none {
 	border: none;
-	background: url('./assets/none.png') no-repeat center / 20px 20px;
+	background: url('../assets/none.png') no-repeat center / 20px 20px;
 	height: 33px;
 	cursor: default;
 }
 
 .clear {
 	border: none;
-	background: url('./assets/clear.png') no-repeat center / 20px 20px;
+	background: url('../assets/clear.png') no-repeat center / 20px 20px;
 }
 
 .fill {
 	border: none;
-	background: url('./assets/clearAll.png') no-repeat center / 20px 20px;
+	background: url('../assets/clearAll.png') no-repeat center / 20px 20px;
 }
 
 .black.active {
@@ -262,6 +267,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	border: 7px solid black;
 }
 
 .paint__label {
@@ -278,6 +284,34 @@ body {
 
 	color: black;
 }
+
+.paint__file {
+	position: absolute;
+	bottom: 6%;
+	left: 30%;
+	transform: translateX(-50%);
+	cursor: pointer;
+}
+
+.paint__file > input {
+	display: none;
+}
+
+.paint__file > label {
+	cursor: pointer;
+	padding: 12px 30px;
+	border: 2px solid black;
+	background: transparent;
+	border-radius: 10px;
+	text-transform: uppercase;
+	transition: all .5s ease-in-out;
+}
+
+.paint__file > label:hover {
+	background-color: black;
+	color: white;
+}
+
 .timer_modal-overlay {
 	position: fixed;
 	left: 40%;
@@ -292,11 +326,7 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	background: linear-gradient(
-		156deg,
-		rgba(110, 109, 111, 0.197),
-		rgba(255, 255, 255, 0.783)
-	);
+	background: linear-gradient(156deg, rgba(110, 109, 111, 0.197), rgba(255, 255, 255, 0.783));
 	z-index: 3000;
 	transition: 0.9s ease;
 	opacity: 1;
@@ -426,14 +456,118 @@ body {
 	}
 }
 
+
+
 .figure-1 {
 	border-radius: 50%;
 }
 
-.figure-4 {
+.figure-2 {
 	border-radius: 50% / 50%;
 }
 
-.figure-5 {
+.figure-3 {
 	transform: skew(30deg);
+}
+
+.shortLink {
+	font-family: "Play", sans-serif;
+	font-weight: 700;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 30px;
+	background-color: rgb(219, 57, 213);
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	z-index: 500;
+}
+
+.shortLink__title {
+	font-family: "Play", sans-serif;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 3px;
+	font-size: 25px;
+}
+
+.shortLink > input {
+	position: relative;
+	margin-top: 20px;
+	font-family: "Play", sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	padding: 20px 30px;
+	padding-left: 60px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: #f1a3f8;
+	margin-bottom: 15px;
+	border: none;
+	transition: all .2s ease-in-out;
+}
+
+.shortLink > input:focus {
+	outline: solid;
+}
+
+.shortLink__title:after {
+	content: '';
+	position: absolute;
+	background: url('../assets/link.png') no-repeat center / cover;
+	width: 15px;
+	height: 15px;
+	top: 102px;
+	left: 60px;
+	z-index: 1000;
+}
+
+.shortLink__text {
+	text-align: center;
+}
+
+.shortLink__text > a {
+	color: white;
+	font-weight: 500;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+.shortLink__text > a:hover {
+	text-decoration: underline;
+}
+.click {
+	font-size: 70px;
+	position: fixed;
+	left: 40%;
+	right: 0;
+	top: 40%;
+	bottom: 0;
+	width: 300px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.total {
+	font-size: 40px;
+	font-weight: bold;
+	color: rgb(110, 43, 43);
+	position: fixed;
+	left: 34%;
+	right: 0;
+	top: 40%;
+	bottom: 0;
+	width: 500px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
