@@ -28,6 +28,10 @@ export class SoundModule extends Module {
 
   trigger() {
 
+    if (this.playerBlock) {
+      this.playerBlock.remove();
+    }
+        
         this.sounds = [
           './assets/sound1.mp3',
           './assets/sound2.mp3',
@@ -43,9 +47,11 @@ export class SoundModule extends Module {
       this.randomSound = this.sounds[this.randomIndex];
   
       this.audio = new Audio(this.randomSound);
-     
 
+      
       this.#createPlayer(this.audio.src);
+
+      
 
 
   }
