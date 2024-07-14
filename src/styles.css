@@ -23,14 +23,13 @@ body {
 	font-family: 'Roboto', sans-serif;
 	height: 100vh;
 	width: 100%;
-	/* padding: 2rem; */
 }
 
 .menu {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1000;
+	z-index: 10000;
 	width: 150px;
 	background: #1b1a1a;
 	border-radius: 5px;
@@ -61,7 +60,6 @@ body {
 	padding-top: 10px;
 	padding-bottom: 50px;
 	background-color: rgb(240, 145, 3);
-	/* filter: blur(5px); */
 	height: 630px;
 	border-bottom: 7px solid black;
 	z-index: 100;
@@ -88,7 +86,6 @@ body {
 	content: '';
 	width: 25px;
 	height: 3px;
-	/* padding: 50px; */
 	display: inline-block;
 	background-color: red;
 }
@@ -280,7 +277,6 @@ body {
 	padding: 2px 0;
 	white-space: nowrap;
 	display: inline-block;
-
 	color: black;
 }
 
@@ -320,17 +316,14 @@ body {
 	width: 300px;
 	height: 150px;
 	border-radius: 15px;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	background: linear-gradient(156deg, rgba(110, 109, 111, 0.197), rgba(255, 255, 255, 0.783));
 	z-index: 3000;
 	transition: 0.9s ease;
 	opacity: 1;
 	box-shadow: 3px 6px 5px rgba(110, 109, 111, 0.197);
-
 	animation: 2s show ease;
 }
 
