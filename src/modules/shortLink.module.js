@@ -7,6 +7,7 @@ export class ShortLinkModule extends Module {
   }
 
   trigger() {
+    document.body.innerHTML = ''
     this.#createDOMElements()
     this.$inputLink.addEventListener('change', this.#getShortLink)
   }
@@ -33,7 +34,7 @@ export class ShortLinkModule extends Module {
 
   #createDOMElements = () => {
     this.$container = addElemNode('section', 'shortLink')
-    this.$h2 = addElemNode('h2', 'shortLink__title', 'URL short. Краткость сестра таланта')
+    this.$h2 = addElemNode('h2', 'shortLink__title', 'URL shorts')
     this.$inputLink = document.createElement('input')
     this.$span = addElemNode('span', 'shortLink__text')
 
