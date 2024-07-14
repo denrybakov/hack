@@ -324,11 +324,7 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	background: linear-gradient(
-		156deg,
-		rgba(110, 109, 111, 0.197),
-		rgba(255, 255, 255, 0.783)
-	);
+	background: linear-gradient(156deg, rgba(110, 109, 111, 0.197), rgba(255, 255, 255, 0.783));
 	z-index: 3000;
 	transition: 0.9s ease;
 	opacity: 1;
@@ -445,4 +441,22 @@ body {
 
 .figure-3 {
 	transform: skew(30deg);
+}
+
+.shortLink {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 30px;
+	background-color: white;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	z-index: 5000;
+}
+
+.shortLink__title {
+	text-align: center;
 }
