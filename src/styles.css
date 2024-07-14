@@ -23,6 +23,7 @@ body {
 	height: 100vh;
 	width: 100%;
 	/* padding: 2rem; */
+	overflow: hidden;
 }
 
 .menu {
@@ -403,11 +404,28 @@ body {
 }
 
 .message-par {
-	color: rgb(94, 145, 0);
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: 1rem;
-	font-weight: 500;
+	position: absolute;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	-webkit-animation: pulsing 2s infinite;
+	animation: pulsing 2s infinite;
 }
+
+@-webkit-keyframes pulsing {
+	0% {
+		-webkit-transform: scale(0.5, 0.5);
+		transform: scale(0.5, 0.5);
+	}
+	50% {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+	}
+	100% {
+		-webkit-transform: scale(0.5, 0.5);
+		transform: scale(0.5, 0.5);
+	}
+}
+
 .figure-1 {
 	border-radius: 50%;
 }

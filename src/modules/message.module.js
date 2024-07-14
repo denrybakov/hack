@@ -10,12 +10,12 @@ export class MessageModule extends Module {
 
 	trigger() {
 		this.randomID = random(1, 200);
-		this.fetchingTodos();
+		this.#fetchingTodos();
 	}
-	fetchingTodos() {
+	#fetchingTodos() {
 		fetch(`${this.TODOS_URL}/${this.randomID}`)
 			.then(response => response.json())
-			.then(response => this.createMessage(response))
+			.then(response => this.#createMessage(response))
 			.catch(error => {
 				console.error(error);
 			})
@@ -24,10 +24,21 @@ export class MessageModule extends Module {
 			});
 	}
 
-	createMessage(response) {
+	#createMessage(response) {
 		this.messagePar = document.createElement('p');
 		this.messagePar.className = 'message-par';
 		this.messagePar.textContent = `${response.title}`;
+		this.#randomize();
 		this.el.append(this.messagePar);
+	}
+	#randomize() {
+		this.messagePar.style.top = random(1, 100) + '%';
+		this.messagePar.style.left = random(1, 100) + '%';
+		this.messagePar.style.fontWeight = random(100, 1000);
+		this.messagePar.style.color = `rgba(${random(0, 255)}+${random(
+			0,
+			255
+		)}+${random(0, 255)})`;
+		this.messagePar.style.fontSize = random(5, 100) + 'px';
 	}
 }
