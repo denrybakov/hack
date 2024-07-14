@@ -401,6 +401,13 @@ body {
 	font-weight: bolder;
 	animation: show 2s ease;
 }
+
+.message-par {
+	color: rgb(94, 145, 0);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+}
 .figure-1 {
 	border-radius: 50%;
 }
