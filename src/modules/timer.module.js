@@ -68,7 +68,6 @@ export class TimerModule extends Module {
 
 	#timerSet() {
 		const timer = setInterval(() => {
-			console.log(this.input.value);
 			this.timerValue.textContent = this.input.value--;
 			if (this.input.value < 0) {
 				clearInterval(timer);
