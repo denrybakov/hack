@@ -15,7 +15,7 @@ export class BackgroundModule extends Module {
   }
 
   #getRandomBackground = () => {
-    document.querySelector('body').style.background = `url('${this.arrBackgrounds[random(0, this.arrBackgrounds.length)]}') no-repeat center / cover`;
+    document.querySelector('body').style.background = `url('${this.arrBackgrounds[random(0, this.arrBackgrounds.length - 1)]}') no-repeat center / cover`;
   }
 }
 
