@@ -516,3 +516,32 @@ body {
 .shortLink__text > a:hover {
 	text-decoration: underline;
 }
+.click {
+	font-size: 70px;
+	position: fixed;
+	left: 40%;
+	right: 0;
+	top: 40%;
+	bottom: 0;
+	width: 300px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.total {
+	font-size: 40px;
+	font-weight: bold;
+	color: rgb(110, 43, 43);
+	position: fixed;
+	left: 34%;
+	right: 0;
+	top: 40%;
+	bottom: 0;
+	width: 500px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
